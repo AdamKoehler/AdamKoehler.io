@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Pong OOP</Title>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/main.css" />
+    </head>
+
+        <body class="is-preload">
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul class="container">
+                        <li><a href="#top">About</a></li>
+                        <li><a href="#work">Concepts/ Challenges</a></li>
+                        <li><a href="#portfolio">Game Demo</a></li>
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </nav>
+            
+            <!-- About -->
+            <article id = "top" class="wrapper style2">
+                <div class="container">
+                        <header>
+                            <h1><strong>About</strong> of this project.</h1>
+                            <p>The game relies on the Abstract Window Toolkit API. 
+                                <strong>Java.AWT</strong> provides classes that aid in creating an applet.
+                            </p>
+                            <h1></h1>
+                            <p>In order to keep the ball within the GUI, I used the 
+                                <strong>
+                                    intersects()
+                                </strong> method. This method returns a boolean value based
+                                 on if two rectangles are in the same parameters.
+                            </p>
+                            <h1></h1>
+                            <p>When intersects() is true, the Ball class is passed new X & Y values
+                                 and this reverses the direction of the ball like a bounce. Every bounce
+                                  slightly increases the speed of the ball.</p>
+                        </header>    
+                </div>
+            </article>
+            <!--A-PIE / challenges--> 
+            <article id = "work" class="wrapper style5">
+                    <div class="container">
+                        <div class = "container">
+                            <h2>Abstraction, Polymorphism, Inheritance...</h2>
+                        </div>
+                        
+                        <div>
+                            <header>
+                                <h3>When you look at the game you might notice a few shapes that represent
+                                    in game objects. By extending the Rectangle class that is in the Abstract Window Toolkit I was able to create these shapes.
+                                     The paddles inherit features of the Rectangle class to make a 2d rectangle object. Instead of making
+                                      two paddle classes from scratch I predefined the paddle parameters and made two different paddles using a unique
+                                       "id" parameter.
+                                </h3>                          
+                            </header>
+                        </div>
+                        <div class="image fit"><img src = "images/Polymorphism.png"></div>
+                    </div>
+            </article>
+
+
+                
+                <article class="wrapper style5">
+                    <div class="container">
+                            <div class = "container">
+                                <h1>Challenges</h1>
+                            </div>
+                            <div class = "row">
+                                <h2>Listeners</h2>
+                            </div>
+                            <div>
+                                <header>
+                                    <h3> This was my first time using event/action listeners to make objects responsive. I needed an eventListener that corresponded
+                                          to the paddle id so that there can be two different player keybinds. The solution was a switch statement. When paddleX.keyPressed()
+                                           was called this switch statement behaved based off the id being passed.
+                                    </h3>                          
+                                </header>
+                                <div class="image fit2"><img src = "images/KeyEvent.png"></div>
+                                <p></p>
+                                <div class="image fit2"><img src = "images/KeyEvent2.png"></div>
+                            </div>
+
+                            <!--random lazy spacing-->
+                            <div style = "margin: 8%"></div>
+
+                            <div>
+                                <div class = "row">
+                                    <h2>Game Engine</h2>
+                                </div>
+                                <header>
+                                    <h3> For any game to be fun it has to be fast enough to run smoothly. This game has a method called <i>run</i> that contains an infinite loop.
+                                         Within the infinite loop there are a few AWT methods that keep the game moving: move(), checkCollision(), and repaint().
+                                          The problem that many people encounter with high performance java GUI's is that the infinite loop is not fast enough and the GUI becomes choppy.
+                                           To fix this problem I had to research the java System.nanoTime() method. To speed up this infinite loop, the game uses a fixed timestep
+                                            and interpolates between frames to provide smooth animation for the players. (around 60 fps)
+                                    </h3>                          
+                                </header>
+                                <div class="image fit2"><img src = "images/GameEngine.png"></div>
+                            </div>
+                          
+                    </div>
+                </article>
+
+            <!--Game Demo-->
+            <article id="portfolio" class="wrapper style4">
+                <div class = "container">
+                    <h1>Gameplay Snippet</h1>
+                <div class = "image fit2">
+                    <img SRC="https://media.giphy.com/media/2n1VxHI59FWdbjGEHd/giphy.gif" alt="gameplay gif">
+                </div>
+                <div class="container"><h3 style="margin-top: 5%;"><a target="_blank" href = "https://github.com/AdamKoehler/Pong.JAR/blob/main/Pong.exe">Pong.exe on Github</a></h3></div>
+            </div>
+            </article>
+        </body>
+    
+</html>
